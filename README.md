@@ -5,36 +5,36 @@ This project is a simple CRUD (Create, Read, Update, Delete) application built u
 </p>
 
 <b> Features </b>
-
-✅ <p> Create new records </p>
-✅ <p> Read and display records </p>
-✅ <p> Update existing records </p>
-✅ <p> Delete records </p>
-✅ <p> Validation for input fields </p>
-✅ <p> User-friendly interface </p>
+ 
+<p> ✅  Create new records </p>
+<p> ✅  Read and display records </p>
+<p> ✅  Update existing records </p>
+<p> ✅  Delete records </p>
+<p> ✅  Validation for input fields </p>
+<p> ✅  User-friendly interface </p>
 
 <b> Installation </b>
 
-1. <b> Clone the repository </b>
+1. <b> Clone the repository </b> <br>
     git clone <https://github.com/mohammadatif786/curd.git 
     <br>
     cd curd
 
-2. <b> Install dependencies </b>
+2. <b> Install dependencies </b><br>
     composer install <br>
     npm install
 
-3. <b> Set up environment </b>
+3. <b> Set up environment </b><br>
     Copy .env.example and rename it to .env, then update the database credentials. <br>
     cp .env.example .env
 
-4. <b> Generate application key </b>
+4. <b> Generate application key </b> <br>
     php artisan key:generate
 
-5. <b> Run migrations and seed database (if applicable) </b>
-    php artisan migrate --seed
+5. <b> Run migrations and seed database (if applicable) </b> <br>
+    php artisan migrate --seed  
 
-6. <b> Serve the application </b>
+6. <b> Serve the application </b> <br>
     php artisan serve <br>
     Open http://127.0.0.1:8000 in your browser.
 
