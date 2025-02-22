@@ -11,7 +11,7 @@
         <div class="container mt-3">
             <div class="row">
                 <div class="col-md-12 d-flex justify-content-end">
-                    <button class="btn btn-primary mb-3">
+                    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#employeeModal">
                         Add Employee
                     </button>
                 </div>
@@ -27,14 +27,55 @@
                                         <th>ID#</th>
                                         <th>Name</th>
                                         <th>Email</th>
+                                        <th>Action</th>
                                     </tr>
+                                    @foreach ($users as $user)
+                                        <tr>
+                                            <td>{{ $user->id }}</td>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>
+                                                <a href="{{ route('edit',['id' => $user->id]) }}" class="btn btn-info">Edit</a>
+                                                <a href="{{ route('delete',['id' => $user->id]) }}" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </thead>
                             </table>
                         </div>
-                        <div class="card-footer text-muted">
-                            Footer
-                        </div>
                     </div>  
+                </div>
+            </div>
+            <!-- Create Modal -->
+            <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add Employee Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="{{route('store')}}" method="post">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="form-group mb-3">
+                                    <label for="">Name</label>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="">Password</label>
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </form>  
+                    </div>
                 </div>
             </div>
         </div>
