@@ -1,8 +1,10 @@
-Laravel CRUD Application
+<b> Laravel CRUD Application <b>
 
+<p>
 This project is a simple CRUD (Create, Read, Update, Delete) application built using Laravel. It allows users to perform basic database operations with a clean and responsive UI.
+</p>
 
-Features
+<b> Features </b>
 
 ✅ Create new records
 ✅ Read and display records
